@@ -65,12 +65,12 @@ async function forcast (location="Alexandria", lang=language){
     var todayName= "Today"
     
     for(var i=0; i<dailyArray.length ; i++){
-        if(todayIndex+i > 6){
-            todayIndex =-1
+        if(i > days.length){
+            i =0
         }
         // console.log(todayIndex+i)
         cont +=`<div class="forc-capt col justify-content-center align-items-center  d-flex flex-column">
-                    <p class="mb-0 fw-bold"> ${i==0? todayName:days[todayIndex+i]}</p>
+                    <p class="mb-0 fw-bold"> ${i==0? todayName:days[i]}</p>
                     <p class="fw-bold mb-0 pt-2" style="color:yellow;"></i>${dailyArray[i].date}</p>
                     <img class="count-icon mb-1" style="width:80px; height:80px" src="${dailyArray[i].day.condition.icon}"/>
                     <p>${dailyArray[i].day.condition.text}</p>
